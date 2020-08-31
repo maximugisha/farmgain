@@ -20,7 +20,7 @@ class Country(models.Model):
 
 
 class Region(models.Model):
-    country_id = models.ForeignKey(Country, on_delete=models.CASCADE)
+    country = models.ForeignKey(Country, on_delete=models.CASCADE)
     region_name = models.CharField(max_length=200, default='Central')
     created_at = models.DateTimeField(default=timezone.now)
     edited_at = models.DateTimeField(default=timezone.now)
@@ -34,7 +34,7 @@ class Region(models.Model):
 
 
 class District(models.Model):
-    region_id = models.ForeignKey(Region, on_delete=models.CASCADE)
+    region = models.ForeignKey(Region, on_delete=models.CASCADE)
     district_name = models.CharField(max_length=200, default='Kampala')
     district_number = models.CharField(max_length=200, null=True)
     created_at = models.DateTimeField(default=timezone.now)
@@ -49,7 +49,7 @@ class District(models.Model):
 
 
 class Market(models.Model):
-    district_id = models.ForeignKey(District, on_delete=models.CASCADE)
+    district = models.ForeignKey(District, on_delete=models.CASCADE)
     market_name = models.CharField(max_length=200, default='Kasubi')
     created_at = models.DateTimeField(default=timezone.now)
     edited_at = models.DateTimeField(default=timezone.now)
@@ -109,8 +109,8 @@ day_enum = [
 
 
 class Price(models.Model):
-    market_id = models.ForeignKey(Market, on_delete=models.CASCADE)
-    crop_id = models.ForeignKey(Crop, on_delete=models.CASCADE)
+    market = models.ForeignKey(Market, on_delete=models.CASCADE)
+    crop = models.ForeignKey(Crop, on_delete=models.CASCADE)
     measure = models.CharField(max_length=200, default='Kilo')
     retail_price = models.IntegerField(default=0)
     wholesale_price = models.IntegerField(default=0)

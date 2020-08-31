@@ -6,8 +6,8 @@ class PriceAdmin(admin.ModelAdmin):
     ordering = ['measure']
 
     list_display = (
-        'market_id',
-        'crop_id',
+        'market',
+        'crop',
         'measure',
         'retail_price',
         'wholesale_price',
@@ -30,7 +30,7 @@ class RegionAdmin(admin.ModelAdmin):
     ordering = ['region_name']
 
     list_display = (
-        'country_id',
+        'country',
         'region_name',
         'created_at',
     )
@@ -40,7 +40,7 @@ class DistrictAdmin(admin.ModelAdmin):
     ordering = ['district_name']
 
     list_display = (
-        'region_id',
+        'region',
         'district_name',
         'district_number',
     )
@@ -51,7 +51,7 @@ class MarketAdmin(admin.ModelAdmin):
 
     list_display = (
         'market_name',
-        'district_id',
+        'district',
         'created_at',
     )
 

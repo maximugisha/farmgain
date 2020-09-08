@@ -90,7 +90,7 @@ DATABASES = {
         'NAME': 'mydkfn6x2cadhp6o',
         'USER': 'clq5k4a2hpjxk5oq',
         'PASSWORD': 'ppj57gbg1laojxlc',
-        'HOST': ' ao9moanwus0rjiex.cbetxkdyhwsb.us-east-1.rds.amazonaws.com',
+        'HOST': 'ao9moanwus0rjiex.cbetxkdyhwsb.us-east-1.rds.amazonaws.com',
         'PORT': '3306',
     }
 

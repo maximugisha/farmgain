@@ -79,10 +79,30 @@ WSGI_APPLICATION = 'farmgain.wsgi.application'
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
 DATABASES = {
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.sqlite3',
+    #     'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    # }
+
+    # configurations for mysql online database
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'mydkfn6x2cadhp6o',
+        'USER': 'clq5k4a2hpjxk5oq',
+        'PASSWORD': 'ppj57gbg1laojxlc',
+        'HOST': ' ao9moanwus0rjiex.cbetxkdyhwsb.us-east-1.rds.amazonaws.com',
+        'PORT': '3306',
     }
+
+    # # configurations for mysql Localhost database
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.mysql',
+    #     'NAME': 'farmgain',
+    #     'USER': 'Maximo',
+    #     'PASSWORD': 'UPbeat123',
+    #     'HOST': 'localhost',
+    #     'PORT': '3306',
+    # }
 }
 
 
@@ -120,8 +140,13 @@ USE_TZ = True
 
 
 # Static files (CSS, JavaScript, Images)
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static"),
+    '/var/www/static/',
+    ]
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
-STATIC_URL = '/static/'
 # Activate Django-Heroku.
 django_heroku.settings(locals())
+
+STATIC_URL = '/static/'

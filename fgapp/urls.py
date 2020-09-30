@@ -1,10 +1,9 @@
 from django.urls import path
+from .views import UserRecordView
 from . import views
 
+app_name = 'api'
 urlpatterns = [
     path('', views.index, name='index'),
-    path('products', views.products, name='products'),
-    path('pricing', views.pricing, name='pricing'),
-    path('technology', views.technology, name='technology'),
-    path('prices', views.price_list, name='price_list')
-    ]
+    path('user', UserRecordView.as_view(), name='users'),
+]

@@ -7,5 +7,25 @@
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
       <jdbc-url>jdbc:sqlite:D:\cypher_code\fga\db.sqlite3</jdbc-url>
     </data-source>
+    <data-source source="LOCAL" name="farmgain@localhost" uuid="d48e3742-82a0-44c2-b4c8-b27cf9a728e2">
+      <driver-ref>mysql.8</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://localhost:3306/farmgain</jdbc-url>
+      <driver-properties>
+        <property name="serverTimezone" value="UTC" />
+      </driver-properties>
+    </data-source>
+    <data-source source="LOCAL" name="Django default" uuid="19ab3dce-2067-4fa0-b867-41f5f5ab72c5">
+      <driver-ref>mysql.8</driver-ref>
+      <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>$PROJECT_DIR$/farmgain/settings.py</remarks>
+      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://127.0.0.1:3306/farmgain</jdbc-url>
+      <driver-properties>
+        <property name="serverTimezone" value="GMT+3" />
+      </driver-properties>
+    </data-source>
   </component>
 </project>

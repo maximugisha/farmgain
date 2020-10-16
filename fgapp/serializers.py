@@ -30,7 +30,8 @@ class UserSerializer(serializers.ModelSerializer):
 class PriceSerializer(serializers.ModelSerializer):
     class Meta:
         model = Price
-        fields = ('market',
+        fields = ('id',
+                  'market',
                   'crop',
                   'measure',
                   'retail_price',

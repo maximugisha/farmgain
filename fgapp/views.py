@@ -10,6 +10,8 @@ from rest_framework.permissions import IsAdminUser
 from django.contrib.auth.models import User
 from .models import Country, Crop, Price, District
 
+from rest_framework.decorators import authentication_classes, permission_classes
+
 
 # Create your views here.
 def index(request):
@@ -46,6 +48,9 @@ class UserRecordView(APIView):
         )
 
 
+#These decorators are used to disable/enable authentcation, just import permission classes or authentication classes
+@permission_classes([])
+@authentication_classes([])
 class PriceViewSet(viewsets.ModelViewSet):
     queryset = Price.objects.all().order_by('crop')
     serializer_class = PriceSerializer

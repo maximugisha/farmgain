@@ -1,13 +1,19 @@
 from django.shortcuts import render, HttpResponse
 from django.template import context
 from django.utils import timezone
-from .serializers import UserSerializer
+from .serializers import UserSerializer, PriceSerializer
 from rest_framework.views import APIView
 from rest_framework.response import Response
-from rest_framework import status
+# view sets for json
+from rest_framework import status, viewsets
 from rest_framework.permissions import IsAdminUser
 from django.contrib.auth.models import User
 from .models import Country, Crop, Price, District
+
+
+# Create your views here.
+def index(request):
+    return HttpResponse('Welcome to Farmgain')
 
 
 class UserRecordView(APIView):
@@ -40,6 +46,6 @@ class UserRecordView(APIView):
         )
 
 
-# Create your views here.
-def index(request):
-    return HttpResponse('Welcome to Farmgain')
+class PriceViewSet(viewsets.ModelViewSet):
+    queryset = Price.objects.all().order_by('crop')
+    serializer_class = PriceSerializer

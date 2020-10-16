@@ -19,7 +19,6 @@ from rest_framework.authtoken import views
 
 urlpatterns = [
     path('', include('fgapp.urls')),
-    path('fgapp/', include('fgapp.urls', namespace='fgapp')),
     path('admin/', admin.site.urls),
     path('api-token-auth/', views.obtain_auth_token, name='api-token-auth'),
 

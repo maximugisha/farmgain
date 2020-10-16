@@ -1,9 +1,16 @@
-from django.urls import path
-from .views import UserRecordView
-from . import views
+from django.urls import path, include
+from rest_framework import routers
+from .views import UserRecordView, PriceViewSet, index
 
+router = routers.DefaultRouter()
+router.register(r'prices', PriceViewSet)
+
+# Wire up our API using automatic URL routing.
+# Additionally, we include login URLs for the browsable API.
 app_name = 'api'
 urlpatterns = [
-    path('', views.index, name='index'),
+    path('', index, name='index'),
     path('user', UserRecordView.as_view(), name='users'),
+    path('', include(router.urls)),
 ]
+

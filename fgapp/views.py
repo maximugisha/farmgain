@@ -1,4 +1,5 @@
 from django.shortcuts import render, HttpResponse
+from django.views.generic import View
 from django.template import context
 from django.utils import timezone
 from .serializers import UserSerializer, PriceSerializer
@@ -15,7 +16,23 @@ from rest_framework.decorators import authentication_classes, permission_classes
 
 # Create your views here.
 def index(request):
-    return HttpResponse('Welcome to Farmgain')
+    return render(request, 'chartjs/index.html')
+
+
+# using rest framework classes
+class ChartData(APIView):
+    authentication_classes = []
+    permission_classes = []
+
+    def get(self, request, format=None):
+        labels = ['Gulu', 'Agago', 'Kasubi', 'Kisenyi', 'owino', 'Amuru']
+        chartLabel = "Crops Data"
+        chartdata = [30, 10, 5, 2, 30, 70, ]
+        data = {"labels": labels,
+                "chartLabel": chartLabel,
+                "chartdata": chartdata,
+                }
+        return Response(data)
 
 
 class UserRecordView(APIView):
@@ -48,7 +65,7 @@ class UserRecordView(APIView):
         )
 
 
-#These decorators are used to disable/enable authentcation, just import permission classes or authentication classes
+# These decorators are used to disable/enable authentcation, just import permission classes or authentication classes
 @permission_classes([])
 @authentication_classes([])
 class PriceViewSet(viewsets.ModelViewSet):

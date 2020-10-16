@@ -95,25 +95,25 @@ DATABASES = {
     #     'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     # }
 
-    # configurations for mysql online database
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'mydkfn6x2cadhp6o',
-        'USER': 'clq5k4a2hpjxk5oq',
-        'PASSWORD': 'ppj57gbg1laojxlc',
-        'HOST': 'ao9moanwus0rjiex.cbetxkdyhwsb.us-east-1.rds.amazonaws.com',
-        'PORT': '3306',
-    }
-
-    # # configurations for mysql Localhost database
+    # # configurations for mysql online database
     # 'default': {
     #     'ENGINE': 'django.db.backends.mysql',
-    #     'NAME': 'farmgain',
-    #     'USER': 'Maximo',
-    #     'PASSWORD': 'UPbeat123',
-    #     'HOST': 'localhost',
+    #     'NAME': 'mydkfn6x2cadhp6o',
+    #     'USER': 'clq5k4a2hpjxk5oq',
+    #     'PASSWORD': 'ppj57gbg1laojxlc',
+    #     'HOST': 'ao9moanwus0rjiex.cbetxkdyhwsb.us-east-1.rds.amazonaws.com',
     #     'PORT': '3306',
     # }
+
+    # configurations for mysql Localhost database
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'farmgain',
+        'USER': 'Maximo',
+        'PASSWORD': 'UPbeat123',
+        'HOST': 'localhost',
+        'PORT': '3306',
+    }
 }
 
 

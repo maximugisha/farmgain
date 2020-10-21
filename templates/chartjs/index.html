@@ -19,9 +19,14 @@
 
 <body class="container-fluid">
 <center class="row">
-    <h1>implementation of <b>chartJS</b> using <b>django</b></h1>
+    <h1>Visual implementation of <b>Price Data</b> for <b>Beans</b> In Selected Markets</h1>
 </center>
 <hr />
+
+<div>
+    <a href="admin/">Admin</a>
+</div>
+
 <div class="row">
     <div class="col-md-6">
         <canvas id="myChartline"></canvas>
@@ -57,7 +62,7 @@
         var ctx = document.getElementById(id).getContext('2d');
         var chart = new Chart(ctx, {
             // The type of chart we want to create
-            type: 'pie',
+            type: 'line',
 
             // The data for our dataset
             data: {

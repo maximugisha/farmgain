@@ -13,6 +13,8 @@ class PriceAdmin(admin.ModelAdmin):
         'wholesale_price',
         'year',
         'month',
+        'week_number',
+        'created_at'
     )
 
 

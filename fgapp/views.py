@@ -9,7 +9,7 @@ from rest_framework.response import Response
 from rest_framework import status, viewsets
 from rest_framework.permissions import IsAdminUser
 from django.contrib.auth.models import User
-from .models import Country, Crop, Price, District
+from .models import Country, Crop, Price, District, Market
 
 from rest_framework.decorators import authentication_classes, permission_classes
 
@@ -25,9 +25,14 @@ class ChartData(APIView):
     permission_classes = []
 
     def get(self, request, format=None):
+        markets_list = Market.objects.name
+        for i in markets_list:
+            markets_list.split()
+
         labels = ['Gulu', 'Agago', 'Kasubi', 'Kisenyi', 'owino', 'Amuru']
-        chartLabel = "Crops Data"
-        chartdata = [30, 10, 5, 2, 30, 70, ]
+
+        chartLabel = "Beans Price Data"
+        chartdata = [3000, 3600, 5000, 3200, 3700, 4700, ]
         data = {"labels": labels,
                 "chartLabel": chartLabel,
                 "chartdata": chartdata,

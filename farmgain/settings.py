@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     'django_tables2',
     'rest_framework',
     'rest_framework.authtoken',
+    'report',
 ]
 
 MIDDLEWARE = [

@@ -11,6 +11,7 @@ class PriceAdmin(admin.ModelAdmin):
         'measure',
         'retail_price',
         'wholesale_price',
+        'availability',
         'year',
         'month',
         'week_number',

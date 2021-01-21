@@ -18,8 +18,9 @@ from django.urls import include, path
 from rest_framework.authtoken import views
 
 urlpatterns = [
-    path('', include('fgapp.urls')),
+    path('', include("api.urls")),
     path('admin/', admin.site.urls),
-    path('api-token-auth/', views.obtain_auth_token, name='api-token-auth'),
+    path('api/v1/', include("api.urls")),
+    path('api-token', views.obtain_auth_token, name='api-token-auth'),
 
 ]
